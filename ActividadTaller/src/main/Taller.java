@@ -5,7 +5,6 @@ public class Taller {
         this.nombre = nombre;
     }
 
-    // Dependencia puntual del Mecanico y la Reparacion
     public void asignarReparacion(Mecanico m, Reparacion r) {
         m.reparar(r);
     }

@@ -38,3 +38,5 @@ Se ha optado por una **composición (vínculo fuerte)** en lugar de una agregaci
 El uso de una interfaz fomenta el principio de **Desacoplamiento**.
 Al obligar a la clase `Mecanico` a implementar `Especialista`, el sistema es fácilmente escalable. En el futuro, el taller podría contratar un `Chapista` o un `Pintor` que también implementen `Especialista`. Si el `Taller` se refactoriza para depender de la interfaz `Especialista` en lugar de la clase concreta `Mecanico`, podrá asignar reparaciones a cualquier tipo de trabajador sin modificar su propio código.
 
+## FASE 4:
+

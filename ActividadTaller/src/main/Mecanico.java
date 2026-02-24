@@ -7,6 +7,5 @@ public class Mecanico implements Especialista {
 
     @Override
     public void reparar(Reparacion r) {
-        // Lógica de la reparación
     }
 }
