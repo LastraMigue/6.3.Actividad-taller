@@ -40,3 +40,13 @@ Al obligar a la clase `Mecanico` a implementar `Especialista`, el sistema es fá
 
 ## FASE 4:
 
+En esta última fase, se ha invertido el ciclo de vida del desarrollo aplicando el proceso de **Ingeniería Inversa**. El objetivo ha sido obtener la documentación arquitectónica actualizada partiendo de modificaciones realizadas directamente en el código fuente.
+
+* **Implementación Directa:** Se ha creado la clase `Factura.java` sin un modelado previo. Esta clase incluye atributos propios (`idFactura`, `fecha`, `total`) y un atributo de tipo clase (`private Reparacion reparacion;`).
+* **Generación Automática del UML:** Se ha utilizado una IA como herramienta de análisis estático. Se le ha proporcionado el código fuente, y la IA ha sido capaz de leer las clases, atributos y colecciones para generar automáticamente el nuevo código Mermaid.
+
+![Captura](img/IA_UML.png)
+
+* **Trazado de la Nueva Relación:** El proceso de ingeniería inversa ha detectado correctamente la nueva estructura y ha trazado una **Asociación Dirigida** (`Factura "1" --> "1" Reparacion : documenta`).
+
+Dejo nuevamente el **[ENLACE](DESIGN.md)** al **Diagrama de Clases** donde la IA a añadido los cambios correspondientes actualizados.

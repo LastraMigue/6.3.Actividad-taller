@@ -33,6 +33,14 @@ direction TB
         - descripcion : String
     }
 
+    class Factura {
+        - idFactura : String
+        - fecha : Date
+        - total : double
+        - reparacion : Reparacion
+        + emitir() void
+    }
+
     class Especialista {
         <<interface>>
         + reparar(Reparacion r) void
@@ -56,4 +64,5 @@ direction TB
     Vehiculo <|-- Moto : herencia
     Especialista <|.. Mecanico : implementa
     Taller ..> Mecanico : usa
+    Factura "1" --> "1" Reparacion : documenta
 ```
