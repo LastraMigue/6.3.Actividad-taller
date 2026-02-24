@@ -26,3 +26,15 @@ El objetivo de esta fase ha sido reflejar fielmente el "plano" diseñado, constr
 6. Clase Reparacion → **[Reparacion.java](ActividadTaller/src/main/Reparacion.java)**
 7. Clase Taller → **[Taller.java](ActividadTaller/src/main/Taller.java)**
 8. Clase Vehiculo → **[Vehiculo.java](ActividadTaller/src/main/Vehiculo.java)**
+
+## FASE 3:
+
+### 1. ¿Por qué se ha elegido composición entre `Vehiculo` y `Reparacion`?
+Se ha optado por una **composición (vínculo fuerte)** en lugar de una agregación porque el ciclo de vida de una reparación está estrictamente ligado al del vehículo. Una reparación no existe de forma autónoma en el sistema del taller ("no tiene sentido sin un vehículo"). Si el vehículo se elimina de la base de datos o se destruye el objeto, su historial de reparaciones debe desaparecer con él.
+
+> **Nota Técnica:** Al tratarse de una aplicación para vehiculos, en este entorno una reparación solo sirve si existe dicho vehiculo, ya que en el entorno real una reparacion puede hacerse a otra cosa que no sea solo eso.
+
+### 2. ¿Qué ventaja tiene usar la interfaz `Especialista`?
+El uso de una interfaz fomenta el principio de **Desacoplamiento**.
+Al obligar a la clase `Mecanico` a implementar `Especialista`, el sistema es fácilmente escalable. En el futuro, el taller podría contratar un `Chapista` o un `Pintor` que también implementen `Especialista`. Si el `Taller` se refactoriza para depender de la interfaz `Especialista` en lugar de la clase concreta `Mecanico`, podrá asignar reparaciones a cualquier tipo de trabajador sin modificar su propio código.
+
