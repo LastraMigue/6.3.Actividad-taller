@@ -59,10 +59,10 @@ direction TB
     %% Relaciones
     Cliente "1" --> "1..*" Vehiculo : posee
     Taller ..> Reparacion : gestiona
+    Factura "1" --> "1" Reparacion : documenta
     Vehiculo "1" *-- "0..*" Reparacion : contiene
     Vehiculo <|-- Coche : herencia
     Vehiculo <|-- Moto : herencia
     Especialista <|.. Mecanico : implementa
     Taller ..> Mecanico : usa
-    Factura "1" --> "1" Reparacion : documenta
 ```
